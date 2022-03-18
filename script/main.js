@@ -2,6 +2,7 @@
 let hour = document.querySelector(".hour");
 let min = document.querySelector(".min");
 let sec = document.querySelector(".sec");
+let ampm = document.querySelector(".ampm");
 
 
 
@@ -19,6 +20,11 @@ function clock(){
     }
     if(hour.innerHTML < 10){
         hour.innerHTML = `0${new Date().getHours()}`
+    }
+    if(hour.innerHTML < 12){
+        ampm.innerHTML = "AM"
+    }else{
+        ampm.innerHTML = "PM"  
     }
 
     setTimeout(clock, 10);
